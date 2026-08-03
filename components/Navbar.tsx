@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { PhoneCall, Heart, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface NavbarProps {
   onOpenAssistance: () => void;
@@ -26,19 +27,25 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 text-white transition-all duration-300 ${
         scrolled
-          ? "glass-nav py-3 shadow-sm text-slate-800"
-          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5 text-white"
+          ? "bg-black py-3 shadow-sm"
+          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-slate-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200 border border-white/20">
-            <Heart className="w-5 h-5 text-[#E77727] fill-[#E77727]" />
+        <a href="#" className="flex items-center gap- group">
+          <div className= "group-hover:scale-105 transition-transform duration-200">
+            <Image
+              src="/logo_2.png"
+              alt="SBHC Logo"
+              width={96}
+              height={96}
+              className="object-cover"
+            />
           </div>
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             <span
               className={`text-xl font-bold tracking-tight leading-none ${scrolled ? "text-slate-900" : "text-white"}`}
             >
@@ -49,7 +56,7 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
             >
               स्वस्थ भारत हेल्थकेयर
             </span>
-          </div>
+          </div> */}
         </a>
 
         {/* Desktop Nav Links */}
@@ -63,7 +70,7 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
                   href={`#${id}`}
                   className={`transition-colors duration-200 ${
                     scrolled
-                      ? "text-slate-600 hover:text-orange-600"
+                      ? "text-white hover:text-orange-600"
                       : "text-slate-200 hover:text-white"
                   }`}
                 >
@@ -89,7 +96,7 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg ${
               scrolled
-                ? "text-slate-800 hover:bg-slate-100"
+                ? "text-white hover:bg-slate-100"
                 : "text-white hover:bg-white/10"
             }`}
             aria-label="Toggle menu"

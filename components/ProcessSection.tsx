@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { ClipboardList, FileSearch, Handshake, HeartPulse } from "lucide-react";
+import { ClipboardList, FileSearch, Handshake, HeartPulse, MapPin } from "lucide-react";
 
 const steps = [
   {
@@ -22,6 +22,14 @@ const steps = [
   },
   {
     num: "03",
+    hindiTitle: "निकटतम अस्पताल आवंटन",
+    englishTitle: "Nearest Hospital Allocation",
+    description:
+      "Based on medical needs and location, we match and allocate the patient to the nearest suitable partner hospital with optimal bed availability.",
+    icon: MapPin,
+  },
+  {
+    num: "04",
     hindiTitle: "समन्वय और अनुमोदन",
     englishTitle: "Coordination & Approval",
     description:
@@ -29,7 +37,7 @@ const steps = [
     icon: Handshake,
   },
   {
-    num: "04",
+    num: "05",
     hindiTitle: "उपचार और डिस्चार्ज",
     englishTitle: "Treatment & Discharge",
     description:
@@ -43,6 +51,7 @@ export default function ProcessSection() {
   const timelineRef = useRef<HTMLDivElement>(null);
   const [lineHeight, setLineHeight] = useState(0);
   const [revealedSteps, setRevealedSteps] = useState<boolean[]>([
+    false,
     false,
     false,
     false,
@@ -104,7 +113,7 @@ export default function ProcessSection() {
             कैसे काम करता है SBHC
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-            A simple, transparent 4-step process that takes you from confusion
+            A simple, transparent 5-step process that takes you from confusion
             to care.
           </p>
         </div>

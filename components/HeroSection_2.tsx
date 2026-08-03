@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowRight, BadgeCheck, Quote } from "lucide-react";
 import {
   motion,
+  AnimatePresence,
   animate,
   useInView,
   useMotionValue,
@@ -12,18 +13,22 @@ import {
 } from "framer-motion";
 
 
+/** Pool of all available photos for the collage rotation. */
+const ALL_IMAGES = [
+  "/IMG_20260802_172558.jpg",
+  "/IMG-20260802-WA0050.jpg",
+  "/IMG-20260802-WA0001.jpg",
+  "/IMG-20260802-WA0000.jpg",
+  "/IMG-20260802-WA0004.jpg",
+  "/IMG-20260802-WA0034.jpg",
+  "/IMG-20260802-WA0040.jpg",
+  "/IMG-20260802-WA0045.jpg",
+];
+
+const ROTATE_INTERVAL = 2000; // ms — image rotation speed
+
 interface HeroSectionProps {
   onOpenAssistance: () => void;
-  /**
-   * Three photos for the collage. Swap these for real photos of your
-   * coordinators, hospitals, or patients — using the same image three times
-   * (the current placeholder) will look repetitive in production.
-   */
-  images?: {
-    primary: string;
-    secondary: string;
-    tertiary: string;
-  };
 }
 
 const DURATION = 1.5; // seconds — count-up animation length
@@ -126,6 +131,51 @@ function AnimatedDual({
   );
 }
 
+/**
+ * A single collage cell that crossfades between images from the pool
+ * every `ROTATE_INTERVAL` ms. Each slot starts at a different index
+ * so they don't all show the same image at the same time.
+ */
+function RotatingImage({
+  startIndex,
+  alt,
+  priority = false,
+}: {
+  startIndex: number;
+  alt: string;
+  priority?: boolean;
+}) {
+  const [currentIdx, setCurrentIdx] = useState(startIndex % ALL_IMAGES.length);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % ALL_IMAGES.length);
+    }, ROTATE_INTERVAL);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <AnimatePresence mode="popLayout">
+      <motion.div
+        key={ALL_IMAGES[currentIdx]}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="absolute inset-0"
+      >
+        <Image
+          src={ALL_IMAGES[currentIdx]}
+          alt={alt}
+          fill
+          priority={priority}
+          className="object-cover"
+        />
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 type Stat =
   | { kind: "number"; value: number; suffix?: string; label: string }
   | { kind: "dual"; first: number; second: number; label: string };
@@ -138,11 +188,6 @@ const stats: Stat[] = [
 
 export default function HeroSection({
   onOpenAssistance,
-  images = {
-    primary: "/IMG_20260802_172558.jpg",
-    secondary: "/IMG-20260802-WA0050.jpg",
-    tertiary: "/IMG-20260802-WA0001.jpg",
-  },
 }: HeroSectionProps) {
   return (
     <>
@@ -206,38 +251,35 @@ export default function HeroSection({
             </motion.div>
           </div>
 
-          {/* Right: photo collage */}
+          {/* Right: photo collage — images rotate every 2s */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative mx-auto grid h-[35vh] md:h-[420px] w-full max-w-md grid-cols-2 grid-rows-2 gap-4 sm:h-[480px] lg:max-w-none"
           >
+            {/* Slot 1 — tall left column */}
             <div className="relative col-span-1 row-span-2 -rotate-2 overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
-              <Image
-                src={images.primary}
+              <RotatingImage
+                startIndex={0}
                 alt="SBHC coordinator assisting a patient's family"
-                fill
                 priority
-                className="object-cover"
               />
             </div>
 
+            {/* Slot 2 — top-right */}
             <div className="relative col-span-1 row-span-1 rotate-2 overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
-              <Image
-                src={images.secondary}
+              <RotatingImage
+                startIndex={3}
                 alt="A hospital consultation supported by SBHC"
-                fill
-                className="object-cover"
               />
             </div>
 
+            {/* Slot 3 — bottom-right */}
             <div className="relative col-span-1 row-span-1 -rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
-              <Image
-                src={images.tertiary}
+              <RotatingImage
+                startIndex={5}
                 alt="Documentation and insurance support in progress"
-                fill
-                className="object-cover"
               />
             </div>
 

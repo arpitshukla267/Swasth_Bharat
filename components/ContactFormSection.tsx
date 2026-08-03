@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { PhoneCall, Mail, MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
+import { PhoneCall, Mail, MapPin, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ContactFormSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -14,9 +16,37 @@ export default function ContactFormSection() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "contact-form",
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -79,14 +109,14 @@ export default function ContactFormSection() {
               </a>
 
               <a
-                href="mailto: info@swasthbharathealthcare.com"
+                href="mailto: care@swasthbharathealthcare.com"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-11 h-11 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center shrink-0 group-hover:bg-orange-500/25 transition-colors">
                   <Mail className="w-5 h-5 text-[#E77727]" />
                 </div>
                 <span className="text-sm sm:text-base font-medium text-slate-200 group-hover:text-white transition-colors">
-                  info@swasthbharathealthcare.com
+                  care@swasthbharathealthcare.com
                 </span>
               </a>
 
@@ -95,7 +125,7 @@ export default function ContactFormSection() {
                   <MapPin className="w-5 h-5 text-[#E77727]" />
                 </div>
                 <span className="text-sm sm:text-base font-medium text-slate-200">
-                  Adarsh Colony, Muradnagar, Ghaziabad, 201206
+                  Muradnagar, Ghaziabad
                 </span>
               </div>
             </div>
@@ -158,12 +188,28 @@ export default function ContactFormSection() {
                       className="w-full px-5 py-3.5 text-sm rounded-xl bg-white/[0.08] border border-white/15 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/60 focus:border-orange-500/50 transition-all resize-none"
                     />
 
+                    {error && (
+                      <div className="px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300 text-xs font-medium text-center">
+                        {error}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 transition-all duration-200 transform hover:-translate-y-0.5 text-sm cursor-pointer"
+                      disabled={loading}
+                      className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 transition-all duration-200 transform hover:-translate-y-0.5 text-sm cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
                     >
-                      <span>Submit Request</span>
-                      <ArrowRight className="w-4 h-4" />
+                      {loading ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Submit Request</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
                     </button>
                   </form>
                 </>
@@ -186,6 +232,7 @@ export default function ContactFormSection() {
                     onClick={() => {
                       setSubmitted(false);
                       setForm({ name: "", phone: "", email: "", message: "" });
+                      setError("");
                     }}
                     className="mt-4 px-6 py-2.5 bg-white/10 border border-white/20 text-white text-xs font-semibold rounded-xl hover:bg-white/15 transition-colors cursor-pointer"
                   >

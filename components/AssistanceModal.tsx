@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { X, Send, ShieldCheck, CheckCircle2, MessageSquare, ChevronDown } from "lucide-react";
+import { X, Send, ShieldCheck, CheckCircle2, MessageSquare, ChevronDown, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface AssistanceModalProps {
@@ -61,9 +61,17 @@ function SmoothDropdown({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const formatValue = (text: string) => {
+    const maxLength = 16;
+    if (text.length > maxLength) {
+      return text.slice(0, maxLength) + "....";
+    }
+    return text;
+  };
+
   return (
     <div ref={ref} className="relative">
-      <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+      <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1 min-h-[32px] flex items-end">
         {label}
       </label>
       <button
@@ -71,7 +79,7 @@ function SmoothDropdown({
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-4 py-3 text-sm rounded-xl border border-slate-300 bg-slate-50/50 text-left focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all cursor-pointer"
       >
-        <span className="text-slate-800 truncate">{value}</span>
+        <span className="text-slate-800 truncate">{formatValue(value)}</span>
         <ChevronDown
           className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
             open ? "rotate-180" : ""
@@ -97,13 +105,13 @@ function SmoothDropdown({
                       onChange(opt);
                       setOpen(false);
                     }}
-                    className={`w-full text-left px-4 py-2.5 text-sm transition-colors cursor-pointer ${
+                    className={`w-full text-left px-4 py-2.5 text-sm transition-colors cursor-pointer truncate ${
                       opt === value
                         ? "bg-orange-50 text-orange-700 font-semibold"
                         : "text-slate-700 hover:bg-slate-50"
                     }`}
                   >
-                    {opt}
+                    {formatValue(opt)}
                   </button>
                 </li>
               ))}
@@ -117,6 +125,8 @@ function SmoothDropdown({
 
 export default function AssistanceModal({ isOpen, onClose }: AssistanceModalProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -124,9 +134,37 @@ export default function AssistanceModal({ isOpen, onClose }: AssistanceModalProp
     service: "Insurance Cashless Assistance",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "assistance-modal",
+          name: formData.name,
+          phone: formData.phone,
+          city: formData.city,
+          service: formData.service,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const resetAndClose = () => {
@@ -214,12 +252,28 @@ export default function AssistanceModal({ isOpen, onClose }: AssistanceModalProp
                   />
                 </div>
 
+                {error && (
+                  <div className="px-4 py-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs font-medium text-center">
+                    {error}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full mt-4 py-3.5 px-6 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-semibold text-sm shadow-lg shadow-orange-500/25 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={loading}
+                  className="w-full mt-4 py-3.5 px-6 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-semibold text-sm shadow-lg shadow-orange-500/25 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Request Urgent Call Back</span>
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Request Urgent Call Back</span>
+                    </>
+                  )}
                 </button>
 
                 <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
