@@ -1,13 +1,20 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Target inbox for all SBHC care queries
 const SBHC_CARE_EMAIL = "care@swasthbharathealthcare.com";
 
 export async function POST(req: NextRequest) {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("Missing RESEND_API_KEY environment variable");
+      return NextResponse.json(
+        { error: "Mail gateway is not configured." },
+        { status: 500 }
+      );
+    }
+    const resend = new Resend(apiKey);
     const body = await req.json();
     const { source, name, phone, email, message, city, service } = body;
 
