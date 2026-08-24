@@ -43,7 +43,7 @@ export default function AboutSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100/90 bg-slate-100 group h-full min-h-[420px] w-full">
               <Image
-                src="/IMG-20260802-WA0034.jpg"
+                src="/hero3.webp"
                 alt="SBHC Advisor with Indian family"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"

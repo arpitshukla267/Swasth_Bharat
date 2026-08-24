@@ -15,14 +15,15 @@ import {
 
 /** Pool of all available photos for the collage rotation. */
 const ALL_IMAGES = [
-  "/IMG_20260802_172558.jpg",
-  "/IMG-20260802-WA0050.jpg",
-  "/IMG-20260802-WA0001.jpg",
-  "/IMG-20260802-WA0000.jpg",
-  "/IMG-20260802-WA0004.jpg",
-  "/IMG-20260802-WA0034.jpg",
-  "/IMG-20260802-WA0040.jpg",
-  "/IMG-20260802-WA0045.jpg",
+  "/hero.webp",
+  "/hero2.webp",
+  "/hero4.webp",
+  "/hero5.webp",
+  "/IMG_20260802_172558.webp",
+  "/IMG-20260802-WA0001.webp",
+  "/IMG-20260802-WA0000.webp",
+  "/IMG-20260802-WA0040.webp",
+  "/IMG-20260802-WA0045.webp",
 ];
 
 const ROTATE_INTERVAL = 2000; // ms — image rotation speed
