@@ -36,7 +36,8 @@ export async function POST(req: NextRequest) {
       timeStyle: "medium",
     });
 
-    const headerColor = "#0F243E";
+    // OLD: const headerColor = "#0F243E";
+    const headerColor = "#3f5a90";
     const accentColor = "#E77727";
 
     switch (source) {

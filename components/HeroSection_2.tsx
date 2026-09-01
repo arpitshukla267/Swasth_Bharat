@@ -193,7 +193,8 @@ export default function HeroSection({
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden bg-[#0E3D3B] pb-28 pt-28 lg:pb-36 lg:pt-44">
+      {/* OLD theme: bg-[#0E3D3B] */}
+      <section className="relative overflow-hidden bg-[#3f5a90] pb-28 pt-28 lg:pb-36 lg:pt-44">
         <div className="relative z-10 mx-auto flex flex-col-reverse md:grid max-w-7xl md:grid-cols-1 items-center gap-16 px-6 lg:grid-cols-[1fr_1fr] lg:gap-8">
           {/* Left: message */}
           <div>
@@ -237,7 +238,7 @@ export default function HeroSection({
             >
               <button
                 onClick={onOpenAssistance}
-                className="inline-flex items-center justify-center gap-2 text-nowrap rounded-full bg-[#E77727] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-black/20 transition-colors duration-200 hover:bg-[#d4691f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0A24F] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0E3D3B]"
+                className="inline-flex items-center justify-center gap-2 text-nowrap rounded-full bg-[#E77727] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-black/20 transition-colors duration-200 hover:bg-[#d4691f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0A24F] focus-visible:ring-offset-2 focus-visible:ring-offset-[#3f5a90]"
               >
                 <span>Get assistance</span>
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -245,7 +246,7 @@ export default function HeroSection({
 
               <a
                 href="#about"
-                className="inline-flex items-center justify-center rounded-full text-nowrap border border-white/25 px-8 py-3.5 text-base font-medium text-white transition-colors duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0E3D3B]"
+                className="inline-flex items-center justify-center rounded-full text-nowrap border border-white/25 px-8 py-3.5 text-base font-medium text-white transition-colors duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#3f5a90]"
               >
                 Learn more
               </a>
@@ -321,7 +322,7 @@ export default function HeroSection({
               key={stat.label}
               className="flex h-full flex-col items-center justify-start px-2 py-4 text-center sm:px-6 sm:py-6"
             >
-              <p className="font-hindi text-2xl font-bold text-[#0E3D3B] sm:text-4xl">
+              <p className="font-hindi text-2xl font-bold text-[#000000] sm:text-4xl">
                 {stat.kind === "number" ? (
                   <AnimatedNumber value={stat.value} suffix={stat.suffix} />
                 ) : (

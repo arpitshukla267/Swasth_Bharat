@@ -52,8 +52,9 @@ export default function ContactFormSection() {
   return (
     <section
       id="contact"
-      className="relative py-0 overflow-hidden bg-[#0F243E]"
+      className="relative py-0 overflow-hidden bg-[#3f5a90]"
     >
+      {/* OLD theme bg: bg-[#0F243E] */}
       {/* Background Image with Radial Ellipse Semi-Circle Mask Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -62,7 +63,7 @@ export default function ContactFormSection() {
           fill
           className="object-cover object-center filter contrast-105 brightness-90 opacity-70"
         />
-        {/* Radial Vignette: clear image in center, solid #0F243E at sides/edges */}
+        {/* OLD radial: rgba(15,36,62,...) → #0F243E */}
         <div
           className="absolute inset-0"
           style={{
@@ -96,17 +97,26 @@ export default function ContactFormSection() {
 
             {/* Contact Details */}
             <div className="mt-10 space-y-5">
-              <a
-                href="tel:+91 9286800211"
-                className="flex items-center gap-4 group"
-              >
-                <div className="w-11 h-11 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center shrink-0 group-hover:bg-orange-500/25 transition-colors">
-                  <PhoneCall className="w-5 h-5 text-[#E77727]" />
+              <div className="flex items-center gap-4 group">
+                <div className="w-11 h-11 rounded-full bg-[#69beb6]/30 border border-[#69beb6]/40 flex items-center justify-center shrink-0 group-hover:bg-[#69beb6]/40 transition-colors">
+                  <PhoneCall className="w-5 h-5 text-[#69beb6]" />
                 </div>
-                <span className="text-sm sm:text-base font-medium text-slate-200 group-hover:text-white transition-colors">
-                  +91 9286800211
-                </span>
-              </a>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                  <a
+                    href="tel:+919525960211"
+                    className="text-sm sm:text-base font-medium text-slate-200 hover:text-white transition-colors"
+                  >
+                    +91 9525960211
+                  </a>
+                  <span className="hidden sm:inline text-slate-400">/</span>
+                  <a
+                    href="tel:+919286810211"
+                    className="text-sm sm:text-base font-medium text-slate-200 hover:text-white transition-colors"
+                  >
+                    +91 9286810211
+                  </a>
+                </div>
+              </div>
 
               <a
                 href="mailto: care@swasthbharathealthcare.com"
@@ -215,7 +225,8 @@ export default function ContactFormSection() {
                 </>
               ) : (
                 <div className="text-center py-8 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-[#69beb6]/30 border border-[#69beb6]/50 text-[#69beb6] flex items-center justify-center mx-auto">
+                    {/* OLD: bg-emerald-500/20 border-emerald-500/30 text-emerald-400 */}
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <h4 className="text-xl font-bold text-white">

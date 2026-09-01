@@ -98,7 +98,7 @@ export default function ChallengeSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-amber-950/80 via-slate-900/40 to-amber-900/20" />
               <div className="absolute top-4 right-4 z-10 bg-amber-950/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-amber-400/40 flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <CheckCircle2 className="w-4 h-4 text-[#69beb6]" />
                 <span className="text-xs font-semibold text-amber-200 uppercase tracking-wider">
                   With SBHC Guidance
                 </span>

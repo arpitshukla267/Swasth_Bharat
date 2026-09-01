@@ -6,13 +6,15 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer id="contact" className="bg-[#0F243E] text-slate-300 pt-12 pb-6 border-t border-slate-800/60 font-sans">
+      {/* OLD theme: bg-[#0F243E] */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
           {/* Brand Column (5 cols) */}
           <div className="md:col-span-6 lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
                <Image
-                  src="/logo_2.png"
+                  // src="/logo_2.png"
+                  src = "/logo.png"
                   alt="SBHC Logo"
                   width={96}
                   height={96}

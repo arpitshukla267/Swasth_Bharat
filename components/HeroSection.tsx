@@ -40,7 +40,7 @@ export default function HeroSection({ onOpenAssistance }: HeroSectionProps) {
     <section className="relative overflow-hidden bg-[#FAF6EF] pt-28 pb-20 lg:pb-28">
       {/* Faint dot-grid texture — quiet, not a spotlight */}
       <svg
-        className="absolute inset-0 h-full w-full text-[#2F6F68]/[0.06]"
+        className="absolute inset-0 h-full w-full text-[#69beb6]/[0.06]"
         aria-hidden="true"
       >
         <defs>
@@ -63,7 +63,7 @@ export default function HeroSection({ onOpenAssistance }: HeroSectionProps) {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#E2D8C4] bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#2F6F68] shadow-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-[#E2D8C4] bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#3f5a90] shadow-sm"
           >
             <Compass className="h-3.5 w-3.5" aria-hidden="true" />
             <span>Patient-first healthcare support</span>
@@ -107,7 +107,7 @@ export default function HeroSection({ onOpenAssistance }: HeroSectionProps) {
 
             <a
               href="#about"
-              className="inline-flex items-center justify-center rounded-full border border-[#1C2B2A]/15 bg-white px-8 py-3.5 text-base font-medium text-[#1C2B2A] transition-colors duration-200 hover:bg-[#F1E9DA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F6F68] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF6EF]"
+              className="inline-flex items-center justify-center rounded-full border border-[#1C2B2A]/15 bg-white px-8 py-3.5 text-base font-medium text-[#1C2B2A] transition-colors duration-200 hover:bg-[#F1E9DA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3f5a90] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF6EF]"
             >
               Learn more
             </a>
@@ -121,12 +121,12 @@ export default function HeroSection({ onOpenAssistance }: HeroSectionProps) {
             className="relative mt-12 space-y-6 pl-9"
           >
             <div
-              className="absolute bottom-2 left-[13px] top-2 w-px bg-gradient-to-b from-[#2F6F68] via-[#E2D8C4] to-[#E77727]"
+              className="absolute bottom-2 left-[13px] top-2 w-px bg-gradient-to-b from-[#3f5a90] via-[#E2D8C4] to-[#E77727]"
               aria-hidden="true"
             />
             {journey.map(({ icon: Icon, title, description }) => (
               <li key={title} className="relative">
-                <span className="absolute -left-9 top-0 flex h-7 w-7 items-center justify-center rounded-full border-2 border-[#E2D8C4] bg-white text-[#2F6F68]">
+                <span className="absolute -left-9 top-0 flex h-7 w-7 items-center justify-center rounded-full border-2 border-[#E2D8C4] bg-white text-[#3f5a90]">
                   <Icon className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
                 <p className="text-sm font-semibold text-[#1C2B2A]">{title}</p>

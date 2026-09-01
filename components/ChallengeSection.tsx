@@ -138,7 +138,7 @@ export default function ChallengeSection() {
               onClick={() => setMobileTab("solution")}
               className={`flex-1 py-2 px-2.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center justify-center gap-1.5 ${
                 mobileTab === "solution"
-                  ? "bg-emerald-600 text-white shadow-md scale-[1.02]"
+                  ? "bg-[#3f5a90] text-white shadow-md scale-[1.02]"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -170,7 +170,7 @@ export default function ChallengeSection() {
                 className="space-y-4"
               >
                 {/* Visual Header Banner */}
-                <div className="relative overflow-hidden rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-emerald-500/10 p-4 shadow-xs">
+                <div className="relative overflow-hidden rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-[#69beb6]/30 p-4 shadow-xs">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="flex h-7 w-7 items-center justify-center rounded-full bg-orange-600 text-white shadow-sm">
@@ -180,7 +180,7 @@ export default function ChallengeSection() {
                         Real-Time Impact
                       </span>
                     </div>
-                    <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full border border-emerald-300/50">
+                    <span className="text-[10px] font-bold bg-[#69beb6]/30 text-[#3f5a90] px-2.5 py-0.5 rounded-full border border-[#69beb6]/50">
                       5/5 Solutions Active
                     </span>
                   </div>
@@ -214,9 +214,9 @@ export default function ChallengeSection() {
                         </div>
 
                         {/* After (Solution) */}
-                        <div className="flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-100 flex-1 min-w-0">
-                          <AfterIcon className="w-3.5 h-3.5 shrink-0 text-emerald-600" />
-                          <span className="text-xs font-bold truncate text-emerald-950">
+                        <div className="flex items-center gap-1.5 text-[#3f5a90] bg-[#69beb6]/30 px-2 py-1 rounded-lg border border-[#69beb6]/40 flex-1 min-w-0">
+                          <AfterIcon className="w-3.5 h-3.5 shrink-0 text-[#3f5a90]" />
+                          <span className="text-xs font-bold truncate text-[#3f5a90]">
                             {after}
                           </span>
                         </div>
@@ -225,7 +225,7 @@ export default function ChallengeSection() {
                       {/* Detail note */}
                       <div className="mt-2.5 flex items-center justify-between text-[11px] text-slate-500">
                         <span className="flex items-center gap-1 font-medium text-slate-600">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> {detail}
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#69beb6]" /> {detail}
                         </span>
                       </div>
                     </motion.div>
@@ -263,9 +263,9 @@ export default function ChallengeSection() {
                   {journey.map(({ id, after, resolvedIcon: Icon }) => (
                     <li
                       key={id}
-                      className="flex items-center gap-3 rounded-xl bg-emerald-50/80 px-3.5 py-3 border border-emerald-100"
+                      className="flex items-center gap-3 rounded-xl bg-[#69beb6]/30 px-3.5 py-3 border border-[#69beb6]/40"
                     >
-                      <div className="p-1.5 rounded-lg bg-emerald-500 text-white shadow-xs">
+                      <div className="p-1.5 rounded-lg bg-[#3f5a90] text-white shadow-xs">
                         <Icon className="h-4 w-4 shrink-0" />
                       </div>
                       <span className="text-sm font-semibold text-slate-800">
@@ -401,9 +401,9 @@ export default function ChallengeSection() {
                 <motion.li
                   key={id}
                   variants={itemVariants}
-                  className="flex items-center gap-3 rounded-xl bg-emerald-50/80 px-3.5 py-2.5"
+                  className="flex items-center gap-3 rounded-xl bg-[#69beb6]/30 px-3.5 py-2.5"
                 >
-                  <Icon className="h-4 w-4 shrink-0 text-emerald-600" />
+                  <Icon className="h-4 w-4 shrink-0 text-[#3f5a90]" />
                   <span className="text-sm font-medium text-slate-800">
                     {after}
                   </span>

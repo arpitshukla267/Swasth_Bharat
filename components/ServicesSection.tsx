@@ -49,7 +49,7 @@ export default function ServicesSection({ onOpenAssistance }: ServicesSectionPro
       title: "Documentation Assistance",
       description:
         "Complete support for medical records, claim forms, and hospital paperwork.",
-      badgeColor: "bg-emerald-50 text-emerald-600 border-emerald-100",
+      badgeColor: "bg-[#69beb6]/30 text-[#3f5a90] border-[#69beb6]/40",
     },
     {
       id: "hospital",

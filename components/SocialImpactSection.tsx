@@ -65,8 +65,9 @@ export default function SocialImpactSection() {
     <section
       id="impact"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#FBF7F0] py-16 md:py-28"
+      className="relative overflow-hidden bg-[#FAF6EF] py-16 md:py-28"
     >
+      {/* OLD theme: bg-[#FBF7F0] */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto mb-14 max-w-2xl text-center">
@@ -78,7 +79,7 @@ export default function SocialImpactSection() {
             <span className="h-px w-8 bg-[#E77727]" />
           </div>
 
-          <h2 className="font-hindi text-3xl font-extrabold leading-tight text-[#14201E] sm:text-5xl">
+          <h2 className="font-hindi text-3xl font-extrabold leading-tight text-black sm:text-5xl">
             <span>जनहित से जुड़ी </span>
             <span className="text-[#E77727]">स्वास्थ्य सहायता</span>
           </h2>
@@ -97,8 +98,9 @@ export default function SocialImpactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[#14201E] sm:aspect-[21/10]"
+            className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-[#3f5a90] sm:aspect-[21/10]"
           >
+            {/* OLD: bg-[#14201E] */}
             <Image
               src="/IMG-20260802-WA0045.jpg"
               alt="SBHC healthcare awareness drive in an Indian rural community"
@@ -114,9 +116,9 @@ export default function SocialImpactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
-            className="relative z-10 mx-4 -mt-10 max-w-md rounded-xl border border-[#14201E]/10 bg-white p-5 shadow-[0_10px_30px_-12px_rgba(20,32,30,0.25)] sm:mx-8 sm:-mt-14 sm:p-6"
+            className="relative z-10 mx-4 -mt-10 max-w-md rounded-xl border border-[#3f5a90]/10 bg-white p-5 shadow-[0_10px_30px_-12px_rgba(63,90,144,0.25)] sm:mx-8 sm:-mt-14 sm:p-6"
           >
-            <p className="font-serif text-base italic leading-snug text-[#14201E] sm:text-lg">
+            <p className="font-serif text-base italic leading-snug text-[#3f5a90] sm:text-lg">
               &ldquo;The team travelled two hours to reach our village clinic —
               my mother finally got the care she needed, close to home.&rdquo;
             </p>

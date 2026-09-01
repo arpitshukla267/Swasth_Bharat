@@ -2,10 +2,29 @@
 
 @layer base {
   :root {
+    /* ── OLD THEME (uncomment to restore) ──
     --background: #f8fafc;
     --foreground: #0f172a;
     --primary: #0a2540;
     --primary-light: #1e3a5f;
+    --theme-green: #0E3D3B;
+    --theme-green-dark: #0F243E;
+    --theme-green-text: #14201E;
+    --theme-teal: #2F6F68;
+    --theme-teal-muted: rgba(47, 111, 104, 0.3);
+    --theme-cream: #FAF6EF;
+    --theme-cream-alt: #FBF7F0;
+    ── END OLD THEME ── */
+
+    /* ── NEW THEME ── */
+    --background: #FAF6EF;
+    --foreground: #0f172a;
+    --primary: #3f5a90;
+    --primary-light: #4d6ba3;
+    --primary-dark: #3f5a90;
+    --accent-teal: #69beb6;
+    --accent-teal-muted: rgba(105, 190, 182, 0.3);
+    --theme-cream: #FAF6EF;
     --accent-orange: #ea580c;
     --accent-orange-hover: #c2410c;
     --accent-amber: #f59e0b;

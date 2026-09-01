@@ -12,7 +12,7 @@ const highlights = [
   {
     icon: ShieldCheck,
     label: "Cashless support",
-    accent: "text-emerald-400",
+    accent: "text-[#69beb6]",
   },
   {
     icon: Users,

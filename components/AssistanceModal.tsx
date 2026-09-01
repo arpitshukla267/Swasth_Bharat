@@ -185,7 +185,8 @@ export default function AssistanceModal({ isOpen, onClose }: AssistanceModalProp
           className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-visible"
         >
           {/* Header */}
-          <div className="bg-[#0F243E] text-white p-6 rounded-t-3xl relative">
+          <div className="bg-[#3f5a90] text-white p-6 rounded-t-3xl relative">
+            {/* OLD theme: bg-[#0F243E] */}
             <button
               onClick={resetAndClose}
               className="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
@@ -282,7 +283,7 @@ export default function AssistanceModal({ isOpen, onClose }: AssistanceModalProp
                     href="https://wa.me/9118001237242?text=Hello%20SBHC%20Care%20Team%2C%20I%20need%20urgent%20hospital%20assistance."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-emerald-600 font-semibold hover:underline"
+                    className="inline-flex items-center gap-1.5 text-[#69beb6] font-semibold hover:underline"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
                     <span>WhatsApp Desk</span>
@@ -291,7 +292,8 @@ export default function AssistanceModal({ isOpen, onClose }: AssistanceModalProp
               </form>
             ) : (
               <div className="text-center py-6 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
+                <div className="w-16 h-16 rounded-full bg-[#69beb6]/30 text-[#3f5a90] flex items-center justify-center mx-auto shadow-inner">
+                  {/* OLD: bg-emerald-100 text-emerald-600 */}
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
                 <h4 className="text-xl font-bold text-slate-900">

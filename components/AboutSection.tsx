@@ -22,7 +22,7 @@ export default function AboutSection() {
       icon: ShieldCheck,
       title: "Trust",
       description: "Transparent, honest support that puts patient welfare above everything.",
-      iconBg: "bg-emerald-50 text-emerald-600 border-emerald-100",
+      iconBg: "bg-[#69beb6]/30 text-[#3f5a90] border-[#69beb6]/40", // OLD: bg-emerald-50 text-emerald-600 border-emerald-100
     },
   ];
 
@@ -52,7 +52,8 @@ export default function AboutSection() {
 
               {/* Floating verified badge overlay */}
               <div className="absolute bottom-6 left-6 glass-nav px-4 py-3 rounded-2xl shadow-xl border border-white/60 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold shadow-md">
+                <div className="w-9 h-9 rounded-full bg-[#3f5a90] flex items-center justify-center text-white font-bold shadow-md">
+                  {/* OLD: bg-emerald-500 */}
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div>

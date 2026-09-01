@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { PhoneCall, Heart, Menu, X } from "lucide-react";
+import { PhoneCall, Menu, X, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -38,10 +38,11 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
         <a href="#" className="flex items-center gap- group">
           <div className= "group-hover:scale-105 transition-transform duration-200">
             <Image
-              src="/logo_2.png"
+              // src="/logo_2.png"
+              src="/logo.png"
               alt="SBHC Logo"
-              width={96}
-              height={96}
+              width={98}
+              height={98}
               className="object-cover"
             />
           </div>
@@ -81,8 +82,17 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
           )}
         </nav>
 
-        {/* Action Button & Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        {/* Action Buttons & Mobile Toggle */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href="/swasth_bharat_healthcare.pdf"
+            download="Swasth_Bharat_Healthcare_Brochure.pdf"
+            className="hidden sm:flex items-center gap-2 bg-[#69beb6]/30 border border-[#69beb6]/50 hover:bg-[#69beb6]/45 text-white font-medium text-sm px-4 py-2.5 rounded-full transition-all duration-200"
+          >
+            <Download className="w-4 h-4 text-[#69beb6]" />
+            <span>Download Brochure</span>
+          </a>
+
           <button
             onClick={onOpenAssistance}
             className="flex items-center gap-2 bg-gradient-to-r from-[#E77727] to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-medium text-sm px-5 py-2.5 rounded-full shadow-lg shadow-[#E77727]/20 hover:shadow-[#E77727]/30 transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer"
@@ -140,6 +150,15 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
                   );
                 },
               )}
+              <a
+                href="/swasth_bharat_healthcare.pdf"
+                download="Swasth_Bharat_Healthcare_Brochure.pdf"
+                onClick={() => setMobileMenuOpen(false)}
+                className="sm:hidden flex items-center gap-2 px-3.5 py-2.5 w-full text-sm font-semibold text-[#3f5a90] bg-[#69beb6]/30 border border-[#69beb6]/50 rounded-lg hover:bg-[#69beb6]/45 transition-all"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download Brochure</span>
+              </a>
             </div>
           </motion.div>
         )}
