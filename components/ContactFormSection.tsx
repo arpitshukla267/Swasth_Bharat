@@ -103,17 +103,23 @@ export default function ContactFormSection() {
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                   <a
-                    href="tel:+919525960211"
+                    href="tel:+918368886902"
                     className="text-sm sm:text-base font-medium text-slate-200 hover:text-white transition-colors"
                   >
-                    +91 9525960211
+                    +91 8368886902
                   </a>
                   <span className="hidden sm:inline text-slate-400">/</span>
                   <a
-                    href="tel:+919286810211"
+                    href="tel:+919286800211"
                     className="text-sm sm:text-base font-medium text-slate-200 hover:text-white transition-colors"
                   >
-                    +91 9286810211
+                    +91 9286800211
+                  </a>
+                  <a
+                    href="tel:+917455844255"
+                    className="text-sm sm:text-base font-medium text-slate-200 hover:text-white transition-colors"
+                  >
+                    +91 7455844255
                   </a>
                 </div>
               </div>
@@ -135,7 +141,7 @@ export default function ContactFormSection() {
                   <MapPin className="w-5 h-5 text-[#E77727]" />
                 </div>
                 <span className="text-sm sm:text-base font-medium text-slate-200">
-                  Muradnagar, Ghaziabad
+                  Muradnagar, Ghaziabad, 201206
                 </span>
               </div>
             </div>
