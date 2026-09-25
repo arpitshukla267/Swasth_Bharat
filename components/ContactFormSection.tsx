@@ -108,13 +108,14 @@ export default function ContactFormSection() {
                   >
                     +91 8368886902
                   </a>
-                  <span className="hidden sm:inline text-slate-400">/</span>
+                  <span className="hidden sm:inline text-slate-400">,</span>
                   <a
                     href="tel:+919286800211"
                     className="text-sm sm:text-base font-medium text-slate-200 hover:text-white transition-colors"
                   >
                     +91 9286800211
                   </a>
+                  <span className="hidden sm:inline text-slate-400">,</span>
                   <a
                     href="tel:+917455844255"
                     className="text-sm sm:text-base font-medium text-slate-200 hover:text-white transition-colors"
