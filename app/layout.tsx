@@ -70,32 +70,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="hi" className={`${hind.variable} ${inter.variable} h-full antialiased scroll-smooth`}>
+    <html
+      lang="hi"
+      className={`${hind.variable} ${inter.variable} h-full antialiased scroll-smooth`}
+    >
       <head>
+        <meta
+          name="google-site-verification"
+          content="8Z5NtwkPnvC3B5zA-JcK-BAtLMW6_DG9LzVSWeEKKkA"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "MedicalOrganization",
-              "name": "Swasth Bharat Healthcare (SBHC)",
-              "alternateName": "स्वस्थ भारत हेल्थकेयर",
-              "url": "https://swasthbharat.org",
-              "logo": "https://swasthbharat.org/logo.png",
-              "contactPoint": {
+              name: "Swasth Bharat Healthcare (SBHC)",
+              alternateName: "स्वस्थ भारत हेल्थकेयर",
+              url: "https://swasthbharat.org",
+              logo: "https://swasthbharat.org/logo.png",
+              contactPoint: {
                 "@type": "ContactPoint",
-                "telephone": "+91-1800-123-7242",
-                "contactType": "emergency customer support",
-                "availableLanguage": ["Hindi", "English"]
+                telephone: "+91-1800-123-7242",
+                contactType: "emergency customer support",
+                availableLanguage: ["Hindi", "English"],
               },
-              "description": "Patient-first healthcare support bridging hospitals, TPAs, insurers, and government schemes."
-            })
+              description:
+                "Patient-first healthcare support bridging hospitals, TPAs, insurers, and government schemes.",
+            }),
           }}
         />
       </head>
-      <body 
+      <body
         surpasshydration-warning="true"
-        className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white">
+        className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white"
+      >
         {children}
       </body>
     </html>
