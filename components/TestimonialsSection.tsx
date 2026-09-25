@@ -32,18 +32,18 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-12 md:py-24 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-12 md:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#E77727] uppercase block mb-2">
             REAL HUMAN STORIES
           </span>
           <h2 className="font-hindi text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-            मरीजों के परिवारों का भरोसा
+            मरीजों के परिवारों का भरोसा <span className="sr-only"> - Swasth Bharat Healthcare Patient Stories</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
             Hear from families across India whose difficult hospital journeys
-            were made stress-free by SBHC care coordinators.
+            were made stress-free by Swasth Bharat Healthcare (SBHC) care coordinators.
           </p>
         </div>
 

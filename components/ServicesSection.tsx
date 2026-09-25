@@ -99,11 +99,11 @@ export default function ServicesSection({ onOpenAssistance }: ServicesSectionPro
           </span>
 
           <h2 className="font-hindi text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-            हम कैसे सहायता करते हैं
+            हम कैसे सहायता करते हैं <span className="sr-only">- Healthcare & Hospital Coordination Services</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed text-balance">
-            Comprehensive healthcare support services designed to remove every barrier between patients and their treatment.
+            Comprehensive healthcare support services from Swasth Bharat Healthcare designed to remove every barrier between patients and timely medical treatment.
           </p>
         </div>
 

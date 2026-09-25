@@ -205,7 +205,7 @@ export default function HeroSection({
               className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-amber-200"
             >
               <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
-              <span>Patient-first healthcare support</span>
+              <span>Swasth Bharat Healthcare • Patient-First Support</span>
             </motion.div>
 
             <motion.h1
@@ -214,6 +214,7 @@ export default function HeroSection({
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-hindi mt-6 max-w-xl text-4xl font-bold leading-[1.25] tracking-tight text-white sm:text-5xl"
             >
+              <span className="sr-only">Swasth Bharat Healthcare - </span>
               <span className="block">हर मरीज़ को सही दिशा,</span>
               <span className="block text-[#F0A24F]">सही समय पर उपचार</span>
             </motion.h1>
@@ -225,9 +226,9 @@ export default function HeroSection({
               className="mt-6 max-w-lg text-base leading-relaxed text-white/70 sm:text-lg"
             >
               Hospital visits are stressful enough without paperwork getting in
-              the way. SBHC works alongside patients and families to coordinate
-              care, sort out approvals, and make sense of insurance — so
-              treatment doesn't have to wait.
+              the way. Swasth Bharat Healthcare (SBHC) works alongside patients and families to coordinate
+              hospital care, sort out TPA approvals, and make sense of cashless health insurance — so
+              treatment doesn&apos;t have to wait.
             </motion.p>
 
             <motion.div
@@ -264,7 +265,7 @@ export default function HeroSection({
             <div className="relative col-span-1 row-span-2 -rotate-2 overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
               <RotatingImage
                 startIndex={0}
-                alt="SBHC coordinator assisting a patient's family"
+                alt="Swasth Bharat Healthcare coordinator assisting a patient and family in hospital"
                 priority
               />
             </div>
@@ -273,7 +274,7 @@ export default function HeroSection({
             <div className="relative col-span-1 row-span-1 rotate-2 overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
               <RotatingImage
                 startIndex={3}
-                alt="A hospital consultation supported by SBHC"
+                alt="Hospital consultation and patient care coordination supported by Swasth Bharat Healthcare"
               />
             </div>
 
@@ -281,7 +282,7 @@ export default function HeroSection({
             <div className="relative col-span-1 row-span-1 -rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
               <RotatingImage
                 startIndex={5}
-                alt="Documentation and insurance support in progress"
+                alt="Medical documentation and cashless insurance approval support in progress"
               />
             </div>
 

@@ -59,7 +59,7 @@ export default function ContactFormSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/IMG-20260802-WA0000.jpg"
-          alt="Hospital entrance assistance background"
+          alt="Hospital entrance and patient admission assistance by Swasth Bharat Healthcare"
           fill
           className="object-cover object-center filter contrast-105 brightness-90 opacity-70"
         />
@@ -87,11 +87,12 @@ export default function ContactFormSection() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E77727] to-amber-500 block py-1">
                 महसूस नहीं होना चाहिए
               </span>
+              <span className="sr-only"> - Contact Swasth Bharat Healthcare</span>
             </h2>
 
             <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-md">
               Whether you need immediate assistance with hospitalization,
-              insurance guidance, or want to partner with SBHC — we&apos;re here
+              cashless insurance guidance, or want to partner with Swasth Bharat Healthcare — we&apos;re here
               to help.
             </p>
 

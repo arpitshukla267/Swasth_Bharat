@@ -44,7 +44,7 @@ export default function AboutSection() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100/90 bg-slate-100 group h-full min-h-[420px] w-full">
               <Image
                 src="/hero3.webp"
-                alt="SBHC Advisor with Indian family"
+                alt="Swasth Bharat Healthcare advisor guiding an Indian patient family through hospital procedures"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -83,7 +83,7 @@ export default function AboutSection() {
 
             {/* Main Headline Devanagari & English */}
             <h2 className="font-hindi text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">
-              सेवा से समाधान तक
+              सेवा से समाधान तक <span className="sr-only">- Swasth Bharat Healthcare</span>
             </h2>
             <p className="text-lg text-slate-500 font-medium mt-1 mb-6">
               From Service to Solution
@@ -91,10 +91,10 @@ export default function AboutSection() {
 
             {/* Main Paragraph */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal mb-8">
-              Swasth Bharat Healthcare (SBHC) is a patient-first healthcare
+              Swasth Bharat Healthcare (also known as Swasth Bharat Health Care or SwasthBharat Healthcare - SBHC) is a patient-first healthcare
               support organization that bridges the gap between hospitals,
               insurers, TPAs, and government schemes — ensuring every patient
-              receives timely treatment, proper documentation, and compassionate
+              receives timely treatment, proper medical documentation, and compassionate
               guidance through their most difficult moments.
             </p>
 

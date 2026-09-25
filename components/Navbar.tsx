@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { PhoneCall, Menu, X, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 interface NavbarProps {
   onOpenAssistance: () => void;
@@ -35,15 +36,16 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap- group">
-          <div className= "group-hover:scale-105 transition-transform duration-200">
+        <Link href="/" aria-label="Swasth Bharat Healthcare Home" className="flex items-center group">
+          <div className="group-hover:scale-105 transition-transform duration-200">
             <Image
               // src="/logo_2.png"
               src="/logo.png"
-              alt="SBHC Logo"
+              alt="Swasth Bharat Healthcare Logo"
               width={98}
               height={98}
               className="object-cover"
+              priority
             />
           </div>
           {/* <div className="flex flex-col">
@@ -58,7 +60,7 @@ export default function Navbar({ onOpenAssistance }: NavbarProps) {
               स्वस्थ भारत हेल्थकेयर
             </span>
           </div> */}
-        </a>
+        </Link>
 
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">

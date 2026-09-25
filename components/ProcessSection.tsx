@@ -110,10 +110,10 @@ export default function ProcessSection() {
             OUR PROCESS
           </span>
           <h2 className="font-hindi text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-            कैसे काम करता है SBHC
+            कैसे काम करता है SBHC <span className="sr-only">- Swasth Bharat Healthcare Process</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-            A simple, transparent 5-step process that takes you from confusion
+            A simple, transparent 5-step process by Swasth Bharat Healthcare that takes you from confusion
             to care.
           </p>
         </div>

@@ -113,7 +113,7 @@ export default function ChallengeSection() {
 
           <p className="mx-auto mt-5 max-w-xl text-balance text-sm font-normal leading-relaxed text-slate-600 sm:text-lg">
             Before treatment even begins, families face an overwhelming maze of
-            approvals, paperwork, and hospital processes. SBHC bridges that gap.
+            approvals, paperwork, and hospital processes. Swasth Bharat Healthcare bridges that gap with dedicated coordination.
           </p>
         </div>
 
@@ -247,7 +247,7 @@ export default function ChallengeSection() {
                 <div className="relative h-48">
                   <Image
                     src="/IMG-20260802-WA0050.jpg"
-                    alt="SBHC healthcare advisor guiding a family"
+                    alt="Swasth Bharat Healthcare advisor guiding a family through hospital care"
                     fill
                     className="object-cover"
                   />
@@ -290,7 +290,7 @@ export default function ChallengeSection() {
                 <div className="relative h-48">
                   <Image
                     src="/challenge-confused.png"
-                    alt="Family confused by hospital paperwork"
+                    alt="Family confused by hospital paperwork and insurance delays without support"
                     fill
                     className="object-cover grayscale-[0.35] contrast-105"
                   />
@@ -331,7 +331,7 @@ export default function ChallengeSection() {
             <div className="relative h-72">
               <Image
                 src="/challenge-confused.png"
-                alt="Family confused by hospital paperwork"
+                alt="Family confused by hospital paperwork and insurance delays without support"
                 fill
                 className="object-cover grayscale-[0.35] contrast-105"
               />
@@ -378,7 +378,7 @@ export default function ChallengeSection() {
             <div className="relative h-72">
               <Image
                 src="/IMG-20260802-WA0050.jpg"
-                alt="SBHC healthcare advisor guiding a family"
+                alt="Swasth Bharat Healthcare advisor guiding a family through hospital care"
                 fill
                 className="object-cover"
               />

@@ -29,7 +29,7 @@ const networkCategories = [
 
 export default function NetworkSection() {
   return (
-    <section className="py-12 md:py-24 bg-slate-100 relative overflow-hidden">
+    <section id="network" className="py-12 md:py-24 bg-slate-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           {/* Left Content */}
@@ -45,10 +45,11 @@ export default function NetworkSection() {
             <h2 className="font-hindi text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
               <span className="block">अस्पतालों के साथ</span>
               <span className="text-[#E77727]">मजबूत समन्वय</span>
+              <span className="sr-only"> - Hospital & Healthcare Partner Network</span>
             </h2>
             <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg">
-              SBHC works as a bridge between all stakeholders in the healthcare
-              ecosystem — hospitals, insurers, TPAs, and government panels — to
+              Swasth Bharat Healthcare works as a dedicated bridge between all stakeholders in the healthcare
+              ecosystem — partner hospitals, insurers, TPAs, and government panels — to
               ensure patients receive seamless care.
             </p>
 
@@ -94,7 +95,7 @@ export default function NetworkSection() {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   src="/network-meeting.png"
-                  alt="SBHC network coordination meeting with hospital administrators"
+                  alt="Swasth Bharat Healthcare coordination meeting with partner hospital administrators"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />

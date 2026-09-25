@@ -82,10 +82,11 @@ export default function SocialImpactSection() {
           <h2 className="font-hindi text-3xl font-extrabold leading-tight text-black sm:text-5xl">
             <span>जनहित से जुड़ी </span>
             <span className="text-[#E77727]">स्वास्थ्य सहायता</span>
+            <span className="sr-only"> - Swasth Bharat Healthcare Social Impact</span>
           </h2>
 
           <p className="mt-5 text-balance text-base leading-relaxed text-[#5B6663] sm:text-lg">
-            From urban hospitals to rural communities, SBHC is committed to
+            From urban hospitals to rural communities, Swasth Bharat Healthcare (SBHC) is committed to
             making healthcare accessible, understandable, and compassionate for
             every Indian family.
           </p>
@@ -103,7 +104,7 @@ export default function SocialImpactSection() {
             {/* OLD: bg-[#14201E] */}
             <Image
               src="/IMG-20260802-WA0045.jpg"
-              alt="SBHC healthcare awareness drive in an Indian rural community"
+              alt="Swasth Bharat Healthcare medical awareness drive and community health support in India"
               fill
               className="object-cover object-center"
             />
